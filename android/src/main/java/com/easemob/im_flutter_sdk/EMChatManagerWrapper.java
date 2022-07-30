@@ -430,6 +430,18 @@ public class EMChatManagerWrapper extends EMWrapper implements MethodCallHandler
             Collections.sort(list, new Comparator<EMConversation>() {
                 @Override
                 public int compare(EMConversation o1, EMConversation o2) {
+                    if (o1 == null && o2 == null) {
+                        return 0;
+                    }
+
+                    if(o1 == null) {
+                        return 1;
+                    }
+
+                    if(o2 == null) {
+                        return -1;
+                    }
+
                     if (o1.getLastMessage() == null) {
                         return 1;
                     }
@@ -461,6 +473,18 @@ public class EMChatManagerWrapper extends EMWrapper implements MethodCallHandler
                 Collections.sort(list, new Comparator<EMConversation>() {
                     @Override
                     public int compare(EMConversation o1, EMConversation o2) {
+                        if (o1 == null && o2 == null) {
+                            return 0;
+                        }
+
+                        if(o1 == null) {
+                            return 1;
+                        }
+
+                        if(o2 == null) {
+                            return -1;
+                        }
+                        
                         if (o1.getLastMessage() == null) {
                             return 1;
                         }
